@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
+import Link from '@mui/material/Link'
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import { Link as ScrollLink } from 'react-scroll'
 import { StyledButton } from '@/components/styled-button'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import EventIcon from '@mui/icons-material/Event'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 interface Exp {
   label: string
@@ -18,16 +20,16 @@ interface ExpItemProps {
 
 const exps: Array<Exp> = [
   {
-    label: 'Students',
-    value: '10K+',
-  },
-  {
-    label: 'Quality Course',
+    label: 'Estudiantes',
     value: '20+',
   },
   {
-    label: 'Experience Mentors',
-    value: '10+',
+    label: 'Experiencia',
+    value: '8 años',
+  },
+  {
+    label: 'Empatía',
+    value: '100%',
   },
 ]
 
@@ -67,7 +69,7 @@ const HomeHero: FC = () => {
                   component="h2"
                   sx={{
                     position: 'relative',
-                    fontSize: { xs: 40, md: 72 },
+                    fontSize: { xs: 40, md: 68 },
                     letterSpacing: 1.5,
                     fontWeight: 'bold',
                     lineHeight: 1.3,
@@ -83,7 +85,7 @@ const HomeHero: FC = () => {
                       backgroundColor: 'unset',
                     }}
                   >
-                    Improve{' '}
+                    Aprendé{' '}
                     <Box
                       sx={{
                         position: 'absolute',
@@ -97,7 +99,7 @@ const HomeHero: FC = () => {
                       <img src="/images/headline-curve.svg" alt="Headline curve" />
                     </Box>
                   </Typography>
-                  your{' '}
+                  matemática
                   <Typography
                     component="span"
                     sx={{
@@ -113,7 +115,6 @@ const HomeHero: FC = () => {
                       },
                     }}
                   >
-                    Skill
                     <svg version="1.1" viewBox="0 0 3183 3072">
                       <g id="Layer_x0020_1">
                         <path
@@ -132,77 +133,30 @@ const HomeHero: FC = () => {
                     </svg>
                   </Typography>{' '}
                   <br />
-                  with Different Way
+                  sin sufrimiento
                 </Typography>
               </Box>
               <Box sx={{ mb: 4, width: { xs: '100%', md: '70%' } }}>
                 <Typography sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
                   {
-                    "Let's take an online course to improve your skills in a different way, you can set your own study time according to your learning speed. So you san study comfortable and absorb tge material easily."
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release"
                   }
                 </Typography>
               </Box>
               <Box sx={{ '& button': { mr: 2 } }}>
-                <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="contained">
-                    Get Started
-                  </StyledButton>
-                </ScrollLink>
-                <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>
-                    Watch Video
-                  </StyledButton>
-                </ScrollLink>
+                <StyledButton onClick={() => {window.open(`https://wa.me/+598092640324?text=${encodeURI("Hola Anabel, te encontré en tu página web y quería coordinar una clase con vos!")}`)}} sx={{marginBottom: {xs: "30px", md: "0"}, width: {xs: "100%", md: "inherit"}, justifyContent: {xs: "center", md: "left"}}} color="primary" size="large" variant="contained" startIcon={<WhatsAppIcon/>}>
+                  Agendá por WhatsApp
+                </StyledButton>
+                <StyledButton onClick={() => {window.open("https://calendly.com/uriel-chami/30min")}} sx={{width: {xs: "100%", md: "inherit"}, justifyContent: {xs: "center", md: "left"}}} color="primary" size="large" variant="outlined" startIcon={<EventIcon/>}>
+                  Agendá nuestra primer clase sin costo
+                </StyledButton>
               </Box>
             </Box>
           </Grid>
           <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
             {/* Sertificate badge */}
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: 30,
-                left: { xs: 0, md: -150 },
-                boxShadow: 1,
-                borderRadius: 3,
-                px: 2,
-                py: 1.4,
-                zIndex: 1,
-                backgroundColor: 'background.paper',
-                display: 'flex',
-                alignItems: 'flex-start',
-                width: 280,
-              }}
-            >
-              <Box
-                sx={{
-                  boxShadow: 1,
-                  borderRadius: '50%',
-                  width: 44,
-                  height: 44,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  mr: 2,
-                  '& img': { width: '32px !important', height: 'auto' },
-                }}
-              >
-                <Image src="/images/certificate.png" alt="Certificate icon" width={50} height={50} quality={97} />
-              </Box>
-              <Box>
-                <Typography
-                  component="h6"
-                  sx={{ color: 'secondary.main', fontSize: '1.1rem', fontWeight: 700, mb: 0.5 }}
-                >
-                  Certificate
-                </Typography>
-                <Typography variant="subtitle1" sx={{ color: 'text.secondary', lineHeight: 1.3 }}>
-                  There are certificates for all courses.
-                </Typography>
-              </Box>
-            </Box>
             <Box sx={{ lineHeight: 0 }}>
-              <Image src="/images/home-hero.jpg" width={775} height={787} alt="Hero img" />
+              <Image src="/images/ani.png" width={250} height={400} alt="Hero img" />
             </Box>
           </Grid>
         </Grid>
